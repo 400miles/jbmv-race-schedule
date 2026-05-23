@@ -145,7 +145,8 @@ const CATEGORY_OPTIONS = [
 ];
 
 const monthFromDate = d => new Date(d + "T12:00:00").toLocaleString("default",{month:"long"});
-const TODAY_STR = new Date().toISOString().slice(0,10);
+const _d = new Date();
+const TODAY_STR = `${_d.getFullYear()}-${String(_d.getMonth()+1).padStart(2,'0')}-${String(_d.getDate()).padStart(2,'0')}`;
 const isPast = d => d < TODAY_STR;
 const isToday = d => d === TODAY_STR;
 
